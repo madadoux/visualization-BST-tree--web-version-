@@ -1,0 +1,231 @@
+﻿
+<html>
+<head>
+    <title> BTree Visualization</title>
+
+
+</head>
+
+
+    <body class="page">
+    
+
+
+
+    <style type="text/css">
+        .page{
+            background :#d3d3d3 ; 
+            
+        }
+        .button{
+            height:20px;
+            width: 55px;
+            text-align:center;
+         font-size :13px;
+
+        }
+        .button2#button{
+            float :right;
+             height:20px;
+        }           
+          .textBox{
+    width :55px;
+    height :20px;
+    text-align :center;
+    background :black;
+    float :right;
+     color : #38fb0b;
+}
+          
+
+        .form {
+            color :white;
+            text-align: left;
+            background:#d3d3d3;
+            padding: 3px;
+                     font-size :13px;
+                   //  -webkit-animation : node .1s infinite alternate ;
+            }
+
+     
+        .conContainer
+{
+            margin-top: 0px ;
+  color :black;
+  float:right;
+  height: 100px;
+  width:1575px; 
+  background:#d3d3d3;
+}
+         .Console
+{
+    float : right ; 
+    padding:5px;
+    color : #38fb0b;
+    text-align: left;
+  background: rgba(0, 0, 0, 0.84);
+  height:112px;
+  width:600px;
+   overflow:auto;
+ 
+}
+         .winContainer{
+  color :black;
+
+  height: 600px;
+  width:1558px; 
+  padding:3px; 
+  background:#d3d3d3;
+
+
+         }
+
+         .window
+{
+    color : #d3d3d3;
+    text-align: left;
+  background: #000000;
+  height:600px;
+  width :1557px;
+   overflow:auto;
+    //-webkit-animation : win  1s infinite alternate ;
+
+ 
+}
+             @-webkit-keyframes win{
+                  0% {
+                    background:#4cff00; 
+                   
+                }
+            
+                  
+                100% {
+                    background:#000000;
+                   
+                }
+         }
+      
+            /* Chrome, Safari, Opera */
+            @-webkit-keyframes node {
+                  0% {
+                    background:#38fb0b;
+                   
+                }
+                 
+
+           
+
+              
+
+                100% {
+                    background:rgba(211, 211, 211, 0.00);
+                   
+                }
+            }
+
+           
+    </style>
+ 
+
+        <div id="form" class="form">
+          
+          
+            <div id="Clog" class="Console">
+                <p1 id="anim"></p1>
+                <br />
+            </div>
+   
+          
+            <button id="button" class="button2" onclick="getinsertkey();" />
+            Insert..
+            </button>
+            <input id="inputValue" type="text" class="textBox" />
+
+            <br />
+
+            <br />
+            
+            <button id="button" class="button2" onclick="getsearchkey();" />
+            Search
+            </button>
+            <input id="inputSearch" type="text" class="textBox" />
+            
+
+           <br/>
+
+            <br />
+                       <button id="button" class="button2" onclick="getdeletekey();" />
+            Delete
+            </button>
+            <input id="deleteKey" type="text" class="textBox" />
+           
+            <br />
+
+            <br />
+            <button type="button" class="button" onclick="ZoomIn()" />
+            +
+            </button>
+
+             <button type="button" class="button" onclick="ZoomOut()" />
+            -
+            </button>
+
+            <button type="button" class="button" onclick="(v.innerHTML += ' ' +b.minVal(b.root).val+'<br\>');" />
+              Min
+            </button>
+          
+            <button type="button" class="button" onclick="(v.innerHTML+=  ' '+b.maxVal(b.root).val+'<br\>');" />
+            Max
+            </button>
+
+            <button type="button" class="button" onclick="b.inorder(b.root)+(v.innerHTML+='<br\>');" />
+            In
+            </button>
+
+            <button type="button" class="button" onclick="b.preorder(b.root)+(v.innerHTML+='<br\>');" />
+            Pre
+            </button>
+            <button type="button" class="button" onclick="b.postorder(b.root)+(v.innerHTML+='<br\>');" />
+            Post
+            </button>
+
+         
+            <button type="button" class="button" onclick="b.CLEAR() + +(v.innerHTML = ' ') + (v.innerHTML += 'Cleared <br\>')+(CanvasClear())  ">
+                ClrBst
+            </button>
+
+            <button type="button" class="button" onclick="(v.innerHTML='Waiting for Operation .... <br\>')" />
+            ClrCon
+            </button>
+           
+
+            <button type="button" class="button" onclick="insertRan(1,80)" />
+            Random
+            </button>
+           
+
+        </div>
+   
+
+
+
+            
+        <div class="winContainer"  >
+         
+            <canvas id="myCanvas" height="600" width="2000" 
+                   class="window" ></canvas>
+            <div style=" color :blue">
+                # Creators : Mohamed saeed // Yasmin abobakr // Nada karam // Nariman ali
+            </div>
+
+        </div>
+    
+
+
+
+
+</body>
+</html>
+<script type="text/javascript" src="BST.js">
+    
+</script>
